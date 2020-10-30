@@ -2,14 +2,31 @@
 
 {% extends 'base.html' %}
 
-{% block content %}
-<h2>Register</h2>
+{% load crispy_forms_tags %}
 
-<form method="post">
+{% block content %}
+<style>
+    h2 {
+           color:rgb(184, 3, 3);   
+       }
+    #onez {
+        color:rgb(240, 247, 240);
+        background-color: green;
+        padding: 10px;
+    }
+    #threez {
+        color:red;
+    }
+</style>
+
+<h2> Create an Acount! </h2>
+
+<form method="post" class="uniForm">
     {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Register">
+    {{form|crispy}}
+    <button type="submit" class="one" id = "onez"> Register </button>
 </form>
 
-<a href="{% url 'login' %}">Back to login</a>
+<a href="{% url 'login' %}" class="three" id="threez">Back to login</a>
+
 {% endblock %}

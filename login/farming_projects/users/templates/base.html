@@ -1,16 +1,29 @@
 <!--users/templates/base.html-->
 
 <style>
-    label, input {
-        display:block;
-    }
-    span.helptext {
-        display: none;
-    }
+        h1 {
+            color:rgb(241, 69, 69);  
+            text-align: center; 
+            font-weight: bolder;
+            font-size: 200%;         
+        }
+        label, input {
+           display: block;
+           color:blue;
+        }
+        span.helptext {
+           display: none;
+        }
+        body{
+            background-color:rgb(44, 42, 42);
+        }
 </style>
+<body>
+    <h1> Welcome To Proper Farming System </h1><hr />
 
-<h1>Welcome To Proper Farming System</h1>
+    {% block content %}
+    
+	{% endblock %}
+</body>
 
-{% block content %}
 
-{% endblock %}

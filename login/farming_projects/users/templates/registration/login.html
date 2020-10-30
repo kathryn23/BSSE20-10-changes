@@ -2,16 +2,43 @@
 
 {% extends 'base.html' %}
 
-{% block content %}
-<h2>Login</h2>
+{% load crispy_forms_tags %}
 
-<form method="post">
+{% block content %} 
+
+<style>
+    h2 {
+        color:rgb(147, 145, 241);
+    }
+    a:link,  a:visited  {
+        color: rgb(159, 75, 238);
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: hotpink;
+        text-decoration: underline;
+        font-size:150%;
+        }
+    button{
+        color:white;
+        background-color: green;
+        border: 2px solid green;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 100%;
+        }
+</style>
+
+<h2>Login Here! </h2>
+
+<form method="post" class="uniForm">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit"> Login </button>
+    {{ form|crispy }}
+    <p> Don't have an acount?, Create one <a href="{% url 'register' %}"> Here! </a> </p> 
+    <button type="submit" > Login </button>
 </form>
 
-<a href="{% url 'homepage' %}"> Back to Home </a>
-<a href="{% url 'password_reset' %}">Reset password</a>
-<a href="{% url 'register' %}">Register</a>
+<p><a href="{% url 'password_reset' %}"> Forgot password? </a> </p>
+
 {% endblock %}

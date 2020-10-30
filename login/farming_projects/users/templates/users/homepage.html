@@ -3,15 +3,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    a:link,  a:visited  {
+        color: rgb(159, 75, 238);
+        text-decoration: none;
+    }
+    a:hover, a:active {
+        color: hotpink;
+        text-decoration: underline;
+        font-size:150%;
+        }
+</style>
 
-Hello, {{ user.username|default:'Guest' }}!
 
-<div>
+Hello, {{ user.username|default:'Guest' }}! 
+<p>
+We here to help you solve your problems in the field of agriculture.
+This system will help you determine why and when to grow your skills in farming.
+</p>
+
+<div class="row">
+    <p>
     {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">Logout</a>
         <a href="{% url 'password_change' %}">Change password</a>
-        
-    {% else %}
+        {% else %}
         <a href="{% url 'login' %}">Login</a>
     {% endif %}
 </div>
