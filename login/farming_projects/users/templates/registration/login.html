@@ -5,12 +5,13 @@
 {% block content %}
 <h2>Login</h2>
 
-<form method = "post" class = "form-group">
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-
-    <p>Don't have an account? Create one <a href = "/register"> Sign up </a></p>
-    <button type = "submit" class = "btn btn-success"> Login </button>
+    <button type="submit"> Login </button>
 </form>
 
+<a href="{% url 'homepage' %}"> Back to Home </a>
+<a href="{% url 'password_reset' %}">Reset password</a>
+<a href="{% url 'register' %}">Register</a>
 {% endblock %}
