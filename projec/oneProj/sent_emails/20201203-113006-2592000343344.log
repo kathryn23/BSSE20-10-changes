@@ -1,0 +1,15 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: katecathy00@gmail.com
+Date: Thu, 03 Dec 2020 08:30:06 -0000
+Message-ID: <160698420640.10168.9979633189502539790@DESKTOP-10QL4AP>
+
+<!--users/templates/registration/password_reset_email.html-->
+
+Someone asked for password reset for email katecathy00@gmail.com.
+Follow the link below:
+http://127.0.0.1:8000/accounts/reset/Mg/aeaym6-6a5769983a25ff8e95ea8447e1e36557/
+-------------------------------------------------------------------------------
